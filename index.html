@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Multimedia</title>
-   
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.17.2/simplelightbox.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"
+      integrity="sha512-RX/OFugt/bkgwRQg4B22KYE79dQhwaPp2IZaA/YyU3GMo/qY7GrXkiG6Dvvwnds6/DefCfwPTgCXnaC6nAgVYw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./homestyle.css" />
   </head>
   <body>
@@ -22,7 +34,7 @@
         <div class="content">
           <h1>Headphones</h1>
           <br />
-          <button class="explore-btn">Explore</button>
+          <button href="index.html" class="explore-btn">Explore</button>
         </div>
       </div>
     </div>
@@ -32,13 +44,19 @@
           <a href="#section-a"><i class="fa fa-home" aria-hidden="true"></i></a>
         </li>
         <li>
-          <a href="#section-b"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+          <a href="#section-b"
+            ><i class="fa fa-heart-o" aria-hidden="true"></i
+          ></a>
         </li>
         <li>
-          <a href="#section-d"><i class="fa fa-th-list" aria-hidden="true"></i></a>
+          <a href="#section-d"
+            ><i class="fa fa-th-list" aria-hidden="true"></i
+          ></a>
         </li>
         <li>
-          <a href="#section-c"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+          <a href="#section-c"
+            ><i class="fa fa-picture-o" aria-hidden="true"></i
+          ></a>
         </li>
       </ul>
 
@@ -52,9 +70,9 @@
               commodi placeat ea itaque modi corrupti corporis nam voluptas aut
               reprehenderit eaque culpa.
             </p>
-            <a href="" class="btn">Read More</a>
+            <a href="./productDetails.html" class="btn">Read More</a>
           </div>
-          <img src="https://i.ibb.co/37Y74kv/showcase.jpg" alt="Showcase Image" />
+          <img src="https://i.ibb.co/37Y74kv/showcase.jpg" alt="" />
         </div>
       </section>
 
@@ -68,17 +86,30 @@
               laborum nostrum iure.
             </p>
             <div class="containeer">
+              &nbsp;&nbsp;
               <h1>🎵</h1>
+              <div id="audio-visual" onclick="playPause()">
+                <div class="audio-wire audio-wire-1"></div>
+                <div class="audio-wire audio-wire-2"></div>
+                <div class="audio-wire audio-wire-3"></div>
+                <div class="audio-wire audio-wire-4"></div>
+                <div class="audio-wire audio-wire-5"></div>
+                <div class="audio-wire audio-wire-6"></div>
+                <div class="audio-wire audio-wire-7"></div>
+                <div class="audio-wire audio-wire-8"></div>
+                <div class="audio-wire audio-wire-9"></div>
+              </div>
               <p>Click me for play or pause!</p>
             </div>
+            <audio src="assets/forever.mp3" id="music" loop></audio>
           </div>
         </div>
       </section>
-
       <section id="section-d" class="section-d">
         <ul class="cards">
           <li class="card">
             <h1>Sounds like an epiphany.</h1>
+
             <p>
               Headphones combine high-fidelity audio with industry-leading
               Active Noise Cancellation to deliver an unparalleled listening
@@ -90,6 +121,7 @@
           </li>
           <li class="card">
             <h1>Immersive listening</h1>
+
             <p>
               To cancel unwanted external sound, AirPods Max use a total of six
               outward-facing microphones to detect noise in your environment,
@@ -100,6 +132,7 @@
           </li>
           <li class="card">
             <h1>Distortionless playback</h1>
+
             <p>
               Modeled after those in high-end floor-standing speakers, the
               driver’s dual-neodymium ring magnet motor minimizes total harmonic
@@ -109,6 +142,7 @@
           </li>
           <li class="card">
             <h1>Hear every detail</h1>
+
             <p>
               The dynamic driver produces a wide frequency range that uncovers
               the rich details of every sound — delivering your favorite songs
@@ -117,26 +151,25 @@
           </li>
         </ul>
       </section>
-
       <section id="section-c" class="section-c">
         <div class="gallery">
           <a href="https://i.ibb.co/CHLBZnp/gal2323.jpg" class="big"
-            ><img src="https://i.ibb.co/CHLBZnp/gal2323.jpg" alt="Gallery Image 1"
+            ><img src="https://i.ibb.co/CHLBZnp/gal2323.jpg" alt=""
           /></a>
           <a href="https://i.ibb.co/4pBbhfY/gal39834.jpg" class="big"
-            ><img src="https://i.ibb.co/4pBbhfY/gal39834.jpg" alt="Gallery Image 2"
+            ><img src="https://i.ibb.co/4pBbhfY/gal39834.jpg" alt=""
           /></a>
           <a href="https://i.ibb.co/xSnHP7g/gal43884.jpg" class="big"
-            ><img src="https://i.ibb.co/xSnHP7g/gal43884.jpg" alt="Gallery Image 3"
+            ><img src="https://i.ibb.co/xSnHP7g/gal43884.jpg" alt=""
           /></a>
           <a href="https://i.ibb.co/QN6Bnrb/gal4958.jpg" class="big"
-            ><img src="https://i.ibb.co/QN6Bnrb/gal4958.jpg" alt="Gallery Image 4"
+            ><img src="https://i.ibb.co/QN6Bnrb/gal4958.jpg" alt=""
           /></a>
-          <a href="https://i.ibb.co/dGZvj75/gal4545.jpg" class="big"
-            ><img src="https://i.ibb.co/dGZvj75/gal4545.jpg" alt="Gallery Image 5"
+          <a href="https://i.ibb.co/dGZvj75/gal4545.jpg" class="big">
+            <img src="https://i.ibb.co/dGZvj75/gal4545.jpg" alt=""
           /></a>
           <a href="https://i.ibb.co/S6FVFNt/gal74744.jpg" class="big"
-            ><img src="https://i.ibb.co/S6FVFNt/gal74744.jpg" alt="Gallery Image 6"
+            ><img src="https://i.ibb.co/S6FVFNt/gal74744.jpg" alt=""
           /></a>
         </div>
       </section>
@@ -204,5 +237,18 @@
         </div>
       </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.17.2/simple-lightbox.min.js"></script>
+    <script src="https://use.fontawesome.com/e7cb172c8c.js"></script>
+    <script src="./script.js"></script>
+    <!-- <script type="text/javascript" src="vanilla-tilt.js"></script> -->
+    <!-- <script>
+      VanillaTilt.init(document.querySelectorAll(".card"), {
+        max: 25,
+        speed: 400,
+        glare: true,
+        "max-glare": 1,
+      });
+    </script> -->
   </body>
 </html>
