@@ -82,7 +82,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(assets/headphones_02.png);
+    background: url(assets/blackLogo.jpg);
     background-size: 300px;
     animation: animate 4s ease-in-out infinite;
   }
@@ -103,9 +103,9 @@
     left: 0;
     width: 100%;
     height: 8px;
-    background: #3fefef;
+    background: #ed8134;
     border-radius: 8px;
-    filter: drop-shadow(0 0 20px #3fefef) drop-shadow(0 0 60px #3fefef);
+    filter: drop-shadow(0 0 20px #ed8134) drop-shadow(0 0 60px #ed8134);
     animation: animate_line 4s ease-in-out infinite;
   }
   @keyframes animate_line {
@@ -122,7 +122,7 @@
     font-size: 2em;
     letter-spacing: 2px;
     margin-top: 20px;
-    color: #3fefef;
+    color: #ed8134;
     filter: drop-shadow(0 0 20px #3fefef) drop-shadow(0 0 60px #3fefef);
     animation: animate_text 0.6s steps(1) infinite;
   }
@@ -207,7 +207,7 @@
   
   .section-a h1 {
     font-size: 4rem;
-    color: var(--primary-color);
+    color: orangered;
   }
   
   .section-a p {
@@ -532,7 +532,7 @@
     font-family: "Noto Sans JP", sans-serif;
   
     padding: 40px;
-    background: #222232;
+    background: rgb(188, 51, 2);
   }
   
   .cards {
