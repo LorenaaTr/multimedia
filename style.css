@@ -292,7 +292,7 @@
   /* section-b */
   .section-b {
     position: relative;
-    background: url("https://i.ibb.co/1RS1dqC/section-b.jpg") no-repeat bottom
+    background: url("assets/jbl.jpg") no-repeat bottom
       center/cover;
     height: 100vh;
   }
