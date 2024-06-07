@@ -299,4 +299,26 @@ loader.load([
 // function onAssetsLoaded() {
 
 
+
 // }
+
+  // window.addEventListener("keydown", (event) => {
+  //   if (event.key === "ArrowRight") {
+  //     if (textureNum < 4) {
+  //       singleProduct360Anim.texture = singleProduct360Anim.textures[textureNum++];  
+  //     }
+  //     else {
+  //       textureNum = 0
+  //       singleProduct360Anim.texture = singleProduct360Anim.textures[textureNum];
+  //     }
+  //   }
+  //   else if (event.key === "ArrowLeft") {
+  //     if (textureNum >= 0) {
+  //       singleProduct360Anim.texture = singleProduct360Anim.textures[textureNum--];
+  //     }
+  //     else {
+  //       textureNum = 3
+  //       singleProduct360Anim.texture = singleProduct360Anim.textures[textureNum];
+  //     }
+  //   }
+  // })
