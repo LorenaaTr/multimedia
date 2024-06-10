@@ -500,7 +500,7 @@
   /* other style*/
   .btn {
     display: inline-block;
-    background: var(--primary-color);
+    background: rgb(2, 2, 70);
     color: #fff;
     padding: 0.8rem 1.5rem;
     border: none;
