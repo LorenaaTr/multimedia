@@ -8,15 +8,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- 
   <style>
     body, html {
-      
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
       background-color: #000;
       color: white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     #background {
@@ -33,18 +36,20 @@
       z-index: 2;
       text-align: center;
       padding: 20px;
+      margin-top: 300px;
     }
 
     .detailsButton {
       position: absolute;
-      top: 20px;
-      left: 20px;
+      top: 60px;
+      left: -670px;
     }
 
     .detailsButton .btn {
       background-color: #007BFF;
       color: white;
       padding: 10px 20px;
+      margin-top: 50px;
       text-decoration: none;
       border-radius: 5px;
       transition: background-color 0.3s;
@@ -54,22 +59,11 @@
       background-color: rgb(2, 2, 70);
     }
 
-    .detailsInfoHeadphones {
-      margin-top: 20px;
-    }
-
-    .detailsPhoto img {
-      width: 50%;
-      max-width: 270px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
     footer {
       background-color: rgb(2, 2, 70);
       color: white;
-      padding: 20px;
-      text-align: justify;
+      padding: 10px 20px;
+      text-align: center;
       width: 100%;
       position: static;
       bottom: 0;
@@ -77,27 +71,28 @@
       z-index: 2;
     }
 
-    .container {
+    footer .container {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
-    .container div {
+    footer .container div {
       flex: 1;
       margin: 10px;
+      text-align: center;
     }
 
-    .container ul {
+    footer .container ul {
       list-style: none;
       padding: 0;
     }
 
-    .container ul li {
+    footer .container ul li {
       margin-bottom: 10px;
     }
 
-    .container ul li a {
+    footer .container ul li a {
       color: white;
       text-decoration: none;
     }
@@ -121,127 +116,137 @@
       border-radius: 0 5px 5px 0;
       cursor: pointer;
     }
-    /* */
-    body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 50px auto;
-    text-align: center;
-  }
-  
-  .speaker {
-    width: 300px;
-    height: 300px;
-    background-image: url('./assets/mainPhoto.png');
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    position: relative;
-    overflow: hidden;
-    animation: pulse 2s infinite alternate, rotate 6s linear infinite;
-    display: inline-block; /* Center horizontally */
-  }
-  
-  .speaker:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 180%;
-    height: 180%;
-    background: radial-gradient(circle, rgba(255,255,255,0.5), transparent);
-    animation: spin 10s linear infinite;
-  }
-  
-  .text {
-    margin-top: 20px;
-    color: #555;
-    opacity: 0;
-    animation: fadeInText 2s ease-in-out forwards;
-    display: inline-block; /* Center horizontally */
-  }
-  
-  .container2 {
-    position: relative;
-    overflow: hidden;
-    margin-top: 50px;
-  }
-  
-  .speaker2 {
-    width: 300px;
-    height: 300px;
-    background-image: url('./assets/mainPhoto.png'); 
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    position:static;
-    bottom: -300px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: slideIn 1s ease-out forwards, bounce 1s ease-out 0.5s forwards;
-    display: inline-block; 
-  }
 
-  @keyframes slideIn {
-    from {
-      bottom: -300px;
+    .container {
+      max-width: 800px;
+      text-align: center;
+      margin: 50px 0;
     }
-    to {
-      bottom: 0;
-    }
-  }
-  
-  @keyframes pulse {
-    from {
-      transform: scale(2);
-    }
-    to {
-      transform: scale(1.5);
-    }
-  }
-  
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-30px);
-    }
-  }
-  
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
 
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
+    .speaker {
+      width: 300px;
+      height: 300px;
+      background-image: url('./assets/mainPhoto.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      animation: pulse 2s infinite alternate, rotate 6s linear infinite;
+      display: inline-block;
     }
-    to {
-      transform: rotate(360deg);
-    }
-  }
 
-  @keyframes fadeInText {
-    from {
+    .speaker:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 180%;
+      height: 180%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
+      animation: spin 10s linear infinite;
+    }
+
+    .text {
+      margin-top: 20px;
+      color: #555;
       opacity: 0;
+      animation: fadeInText 2s ease-in-out forwards;
+      display:
+      inline-block;
+      font-size: 14px; /* Make the text smaller */
+      text-align: center;
     }
-    to {
-      opacity: 1;
+
+    .text:hover {
+      color: #fff; /* Change text color on hover */
+      transition: color 0.3s ease; /* Smooth transition */
     }
-  }
+
+    .container2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .speaker2 {
+      width: 300px;
+      height: 300px;
+      background-image: url('./assets/mainPhoto.png'); 
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      position: relative;
+      animation: slideIn 1s ease-out forwards, bounce 1s ease-out 0.5s forwards;
+      display: inline-block; 
+    }
+
+    .detailsInfoHeadphones {
+      margin-top: 50px;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .detailsInfoHeadphones p {
+      font-size: 14px; /* Make the paragraph text smaller */
+      margin-bottom: 80px;
+    }
+
+    @keyframes slideIn {
+      from {
+        bottom: -300px;
+      }
+      to {
+        bottom: 0;
+      }
+    }
+
+    @keyframes pulse {
+      from {
+        transform: scale(2);
+      }
+      to {
+        transform: scale(1.5);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-30px);
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeInText {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
@@ -250,25 +255,20 @@
     <div class="detailsButton">
       <a class="btn" href="./index.html">Go Back</a>
     </div>
-    <div class="detailsInfoHeadphones">
-      <div class="detailsInfo">
-        <h1>JBL The Headphones Of The Future.</h1>
-        <p>
-          JBL headsets represent the pinnacle of audio innovation, offering an unparalleled listening experience that transcends boundaries. With cutting-edge technology and meticulous craftsmanship, JBL headsets deliver crystal-clear sound, deep bass, and immersive audio quality that transport you into the heart of the music. Whether you're enjoying your favorite tracks, gaming with friends, or taking calls on the go, JBL headsets provide unmatched comfort, style, and performance. Elevate your audio experience with JBL headsets and immerse yourself in a world of pure sound.
-        </p>
-      </div>
+  </div>
+  <div class="container2">
+    <div class="speaker2"></div>
+    <div class="text">
+      <h2>JBL The HeadPhones</h2>
+      <p>Discover more JBL sound options.</p>
     </div>
-    <div class="container2">
-      <div class="speaker2"></div>
-      <div class="text">
-        <h2>JBL The HeadPhones</h2>
-        <p>Discover more JBL sound options.</p>
-      </div>
-    </div>
-   
-    <div id="proxyTrigger">
-      <div id="target"></div>
-      <div id="proxy"></div>
+  </div>
+  <div class="detailsInfoHeadphones">
+    <div class="detailsInfo">
+      <h1>JBL The Headphones Of The Future.</h1>
+      <p>
+        JBL headsets represent the pinnacle of audio innovation, offering an unparalleled listening experience that transcends boundaries. With cutting-edge technology and meticulous craftsmanship, JBL headsets deliver crystal-clear sound, deep bass, and immersive audio quality that transport you into the heart of the music. Whether you're enjoying your favorite tracks, gaming with friends, or taking calls on the go, JBL headsets provide unmatched comfort, style, and performance. Elevate your audio experience with JBL headsets and immerse yourself in a world of pure sound.
+      </p>
     </div>
   </div>
   <footer>
@@ -326,61 +326,61 @@
         transparent: true 
       });
       document.getElementById('background').appendChild(app.view);
-  
+
       // Load image and create background sprite
       const bgTexture = PIXI.Texture.from('assets/mainPhoto.png');
       const bgSprite = new PIXI.Sprite(bgTexture);
       bgSprite.anchor.set(0.5);
-  bgSprite.x = app.screen.width / 2;
-  bgSprite.y = app.screen.height / 2;
-  bgSprite.width = app.screen.width;
-  bgSprite.height = app.screen.height;
+      bgSprite.x = app.screen.width / 2;
+      bgSprite.y = app.screen.height / 2;
+      bgSprite.width = app.screen.width;
+      bgSprite.height = app.screen.height;
 
-  app.stage.addChild(bgSprite);
+      app.stage.addChild(bgSprite);
 
-  // Load image and create main sprite
-  const texture = PIXI.Texture.from('assets/mainPhoto.png');
-  const sprite = new PIXI.Sprite(texture);
+      // Load image and create main sprite
+      const texture = PIXI.Texture.from('assets/mainPhoto.png');
+      const sprite = new PIXI.Sprite(texture);
 
-  sprite.anchor.set(0.5);
-  sprite.x = app.screen.width / 2;
-  sprite.y = app.screen.height / 2;
-  sprite.scale.set(0.5);
+      sprite.anchor.set(0.5);
+      sprite.x = app.screen.width / 2;
+      sprite.y = app.screen.height / 2;
+      sprite.scale.set(0.5);
 
-  app.stage.addChild(sprite);
+      app.stage.addChild(sprite);
 
-  // GSAP animations
-  gsap.from(".detailsInfo h1", { duration: 1, y: -50, opacity: 0, ease: "bounce" });
-  gsap.from(".detailsInfo p", { duration: 1, x: -50, opacity: 0, delay: 0.5 });
-  gsap.from(".detailsButton .btn", { duration: 1, scale: 0, ease: "elastic", delay: 1 });
+      // GSAP animations
+      gsap.from(".detailsInfo h1", { duration: 1, y: -50, opacity: 0, ease: "bounce" });
+      gsap.from(".detailsInfo p", { duration: 1, x: -50, opacity: 0, delay: 0.5 });
+      gsap.from(".detailsButton .btn", { duration: 1, scale: 0, ease: "elastic", delay: 1 });
 
-  // Sprite animation
-  gsap.to(sprite, {
-    rotation: 2 * Math.PI,
-    duration: 10,
-    repeat: -1,
-    ease: "linear"
-  });
+      // Sprite animation
+      gsap.to(sprite, {
+        rotation: 2 * Math.PI,
+        duration: 10,
+        repeat: -1,
+        ease: "linear"
+      });
 
-  // GSAP Draggable setup
-  Draggable.create("#proxy", {
-    type: "x,y",
-    bounds: "#proxyTrigger",
-    onDrag: function() {
-      gsap.set("#target", { x: this.x, y: this.y });
-    }
-  });
+      // GSAP Draggable setup
+      Draggable.create("#proxy", {
+        type: "x,y",
+        bounds: "#proxyTrigger",
+        onDrag: function() {
+          gsap.set("#target", { x: this.x, y: this.y });
+        }
+      });
 
-  // Animation for the photo
-gsap.to(sprite, {
-  duration: 2,
-  scale: 0.8,
-  yoyo: true, // to make it go back and forth
-  repeat: -1,
-  ease: "power1.inOut" // easing function
-});
-});
-</script>
-<script src="https://use.fontawesome.com/e7cb172c8c.js"></script>
+      // Animation for the photo
+      gsap.to(sprite, {
+        duration: 2,
+        scale: 0.8,
+        yoyo: true,
+        repeat: -1,
+        ease: "power1.inOut"
+      });
+    });
+  </script>
+  <script src="https://use.fontawesome.com/e7cb172c8c.js"></script>
 </body>
 </html>
