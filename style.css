@@ -72,7 +72,7 @@
   }
   .scan .loader {
     position: relative;
-    width: 300px;
+    width: 400px;
     height: 261px;
     background-size: 300px;
   }
@@ -553,8 +553,7 @@
     width: 550px;
     height: 350px;
     background: #ccc;
-    border-radius: 30px;
-    padding: 40px;
+    padding: 80px;
     box-shadow: 0 0 40px #000;
     transform: translateY(0) rotate(4deg) translateX(25px) scale(1);
     transform-origin: 0 0;
