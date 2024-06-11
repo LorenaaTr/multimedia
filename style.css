@@ -152,7 +152,7 @@
   }
  /* navbar */
 .navbar {
-  background: rgb(2, 2, 70);
+  background: rgb(27, 0, 42);
   min-width: 30px;
   height: 100%;
   box-sizing: border-box;
@@ -417,7 +417,7 @@
   /* footer */
   
   .section-footer {
-    background: rgb(2, 2, 70);
+    background: rgb(27, 0, 42);
     color: #fff;
     padding: 4rem 0;
   }
@@ -500,7 +500,7 @@
   /* other style*/
   .btn {
     display: inline-block;
-    background: rgb(2, 2, 70);
+    background: rgb(27, 0, 42);
     color: #fff;
     padding: 0.8rem 1.5rem;
     border: none;
