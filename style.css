@@ -776,5 +776,10 @@
     color: orangered;
   }
 
-  
+  .section-e {
+    position: relative;
+    background: url("assets/speaker.jpeg") no-repeat bottom
+      center/cover;
+    height: 70vh;
+  }
   
