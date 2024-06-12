@@ -1,280 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product</title>
-  <script src="https://pixijs.download/release/pixi.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: white;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
-    .detailsContainer {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 20px;
-      margin-top: 300px;
-    }
-
-    .detailsButton {
-      position: absolute;
-      top: 60px;
-      left: -670px;
-    }
-
-    .detailsButton .btn {
-      background-color: #007BFF;
-      color: white;
-      padding: 10px 20px;
-      margin-top: 50px;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .detailsButton .btn:hover {
-      background-color: rgb(2, 2, 70);
-    }
-
-    footer {
-      background-color: rgb(2, 2, 70);
-      color: white;
-      padding: 10px 20px;
-      text-align: center;
-      width: 100%;
-      position: static;
-      bottom: 0;
-      left: 0;
-      z-index: 2;
-    }
-
-    footer .container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    footer .container div {
-      flex: 1;
-      margin: 10px;
-      text-align: center;
-    }
-
-    footer .container ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    footer .container ul li {
-      margin-bottom: 10px;
-    }
-
-    footer .container ul li a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .email-form {
-      display: flex;
-      justify-content: center;
-    }
-
-    .email-form input {
-      padding: 10px;
-      border: none;
-      border-radius: 5px 0 0 5px;
-    }
-
-    .email-form button {
-      padding: 10px;
-      border: none;
-      background-color: #0056b3;
-      color: white;
-      border-radius: 0 5px 5px 0;
-      cursor: pointer;
-    }
-
-    .container {
-      max-width: 800px;
-      text-align: center;
-      margin: 50px 0;
-    }
-
-    .speaker {
-      width: 300px;
-      height: 300px;
-      background-image: url('./assets/mainPhoto.png');
-      background-size: cover;
-      background-position: center;
-      border-radius: 50%;
-      position: relative;
-      overflow: hidden;
-      animation: pulse 2s infinite alternate, rotate 6s linear infinite;
-      display: inline-block;
-    }
-
-    .speaker:before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 180%;
-      height: 180%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent);
-      animation: spin 10s linear infinite;
-    }
-
-    .text {
-      margin-top: 20px;
-      color: #555;
-      opacity: 0;
-      animation: fadeInText 2s ease-in-out forwards;
-      display:
-      inline-block;
-      font-size: 14px; /* Make the text smaller */
-      text-align: center;
-    }
-
-    .text:hover {
-      color: #fff; /* Change text color on hover */
-      transition: color 0.3s ease; /* Smooth transition */
-    }
-
-    .container2 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 50px;
-    }
-
-    .speaker2 {
-      width: 300px;
-      height: 300px;
-      background-image: url('./assets/mainPhoto.png'); 
-      background-size: cover;
-      background-position: center;
-      border-radius: 50%;
-      position: relative;
-      animation: slideIn 1s ease-out forwards, bounce 1s ease-out 0.5s forwards;
-      display: inline-block; 
-    }
-
-    .detailsInfoHeadphones {
-      margin-top: 50px;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    .detailsInfoHeadphones p {
-      font-size: 14px; /* Make the paragraph text smaller */
-      margin-bottom: 80px;
-    }
-
-    @keyframes slideIn {
-      from {
-        bottom: -300px;
-      }
-      to {
-        bottom: 0;
-      }
-    }
-
-    @keyframes pulse {
-      from {
-        transform: scale(2);
-      }
-      to {
-        transform: scale(1.5);
-      }
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-30px);
-      }
-    }
-
-    @keyframes spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes fadeInText {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-  </style>
+  <script src="https://pixijs.download/release/pixi.min.js"></script>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <div id="background"></div>
   <div class="detailsContainer">
     <div class="detailsButton">
       <a class="btn" href="./index.html">Go Back</a>
     </div>
-  </div>
-  <div class="container2">
-    <div class="speaker2"></div>
-    <div class="text">
-      <h2>JBL The HeadPhones</h2>
-      <p>Discover more JBL sound options.</p>
+    <div class="detailsInfoHeadphones">
+      <div class="detailsInfo">
+        <h1>...The JBL Speakers...</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+          repudiandae rerum libero ipsum asperiores omnis mollitia, nostrum
+          commodi placeat ea itaque modi corrupti corporis nam voluptas aut
+          reprehenderit eaque culpa.
+        </p>
+      </div>
     </div>
   </div>
-  <div class="detailsInfoHeadphones">
-    <div class="detailsInfo">
-      <h1>JBL The Headphones Of The Future.</h1>
-      <p>
-        JBL headsets represent the pinnacle of audio innovation, offering an unparalleled listening experience that transcends boundaries. With cutting-edge technology and meticulous craftsmanship, JBL headsets deliver crystal-clear sound, deep bass, and immersive audio quality that transport you into the heart of the music. Whether you're enjoying your favorite tracks, gaming with friends, or taking calls on the go, JBL headsets provide unmatched comfort, style, and performance. Elevate your audio experience with JBL headsets and immerse yourself in a world of pure sound.
-      </p>
+  <div class="detailsContainer">
+    <div class="detailsPhoto" id="appContainer"></div>
+  </div>
+
+  <div class="slider-container">
+    <h2 class="reviews">Customer Reviews</h2>
+    <div class="slider">
+      <div class="slide">
+        <p>"Great product! Excellent sound quality."</p>
+        <p class="rev">- John Doe</p>
+      </div>
+      <div class="slide">
+        <p>"Love these speakers! The bass is amazing."</p>
+        <p class="rev">- Jane Smith</p>
+      </div>
+      <div class="slide">
+        <p>"Love these speakers! The bass is amazing."</p>
+        <p class="rev">- Jane Smith</p>
+      </div>
+      <div class="slide">
+        <p>"Love these speakers! The bass is amazing."</p>
+        <p class="rev">- Jane Smith</p>
+      </div>
+     
     </div>
   </div>
-  <footer>
+
+  <footer class="section-footer py-4 bg-primary">
     <div class="container">
       <div>
-        <h2>Lorem ipsum dolor sit.</h2>
+        <h2 class="text-2 mb-1">Lorem ipsum dolor sit.</h2>
         <a href="http://twitter.com">
           <i class="fa fa-twitter-square" aria-hidden="true"></i>
         </a>
@@ -306,10 +86,22 @@
       <div>
         <h3>Subscribe</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <form name="email-form" method="POST" data-netlify="true">
+        <form
+          class="mt-1"
+          name="email-form"
+          method="POST"
+          data-netlify="true"
+        >
           <div class="email-form">
-            <input type="email" name="email" id="email" size="40" placeholder="E-mail" />
-            <button type="submit" value="Submit">
+            <span class="form-control-wrap"
+              ><input
+                type="email"
+                name="email"
+                id="email"
+                size="40"
+                class="form-control"
+                placeholder="E-mail" /></span
+            ><button type="submit" value="Submit" class="form-control submit">
               <i class="fa fa-chevron-right" aria-hidden="true"></i>
             </button>
           </div>
@@ -317,70 +109,39 @@
       </div>
     </div>
   </footer>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // PIXI.js setup
-      const app = new PIXI.Application({ 
-        width: window.innerWidth, 
-        height: window.innerHeight, 
-        transparent: true 
-      });
-      document.getElementById('background').appendChild(app.view);
 
-      // Load image and create background sprite
-      const bgTexture = PIXI.Texture.from('assets/mainPhoto.png');
-      const bgSprite = new PIXI.Sprite(bgTexture);
-      bgSprite.anchor.set(0.5);
-      bgSprite.x = app.screen.width / 2;
-      bgSprite.y = app.screen.height / 2;
-      bgSprite.width = app.screen.width;
-      bgSprite.height = app.screen.height;
+  <script type="module">
+    // Create the application helper and add its render target to the page
+    const app = new PIXI.Application();
+    await app.init({ width: 640, height: 360 });
 
-      app.stage.addChild(bgSprite);
+    document.getElementById('appContainer').appendChild(app.view);
 
-      // Load image and create main sprite
-      const texture = PIXI.Texture.from('assets/mainPhoto.png');
-      const sprite = new PIXI.Sprite(texture);
+    // Create the sprite and add it to the stage
+    // Use HTTP Server to load images etc.
+    await PIXI.Assets.load('https://images.pexels.com/photos/4917455/pexels-photo-4917455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    let sprite = PIXI.Sprite.from('https://images.pexels.com/photos/4917455/pexels-photo-4917455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    
+    // Calculate the scale factor to fit the sprite inside the container
+    const containerWidth = 640; // width of the container
+    const containerHeight = 360; // height of the container
+    const scaleFactor = Math.min(containerWidth / sprite.width, containerHeight / sprite.height);
+    
+    sprite.scale.set(scaleFactor); // Apply the scale factor to the sprite
 
-      sprite.anchor.set(0.5);
-      sprite.x = app.screen.width / 2;
-      sprite.y = app.screen.height / 2;
-      sprite.scale.set(0.5);
+    app.stage.addChild(sprite);
 
-      app.stage.addChild(sprite);
-
-      // GSAP animations
-      gsap.from(".detailsInfo h1", { duration: 1, y: -50, opacity: 0, ease: "bounce" });
-      gsap.from(".detailsInfo p", { duration: 1, x: -50, opacity: 0, delay: 0.5 });
-      gsap.from(".detailsButton .btn", { duration: 1, scale: 0, ease: "elastic", delay: 1 });
-
-      // Sprite animation
-      gsap.to(sprite, {
-        rotation: 2 * Math.PI,
-        duration: 10,
-        repeat: -1,
-        ease: "linear"
-      });
-
-      // GSAP Draggable setup
-      Draggable.create("#proxy", {
-        type: "x,y",
-        bounds: "#proxyTrigger",
-        onDrag: function() {
-          gsap.set("#target", { x: this.x, y: this.y });
-        }
-      });
-
-      // Animation for the photo
-      gsap.to(sprite, {
-        duration: 2,
-        scale: 0.8,
-        yoyo: true,
-        repeat: -1,
-        ease: "power1.inOut"
-      });
+    // Add a variable to count up the seconds our demo has been running
+    let elapsed = 0.0;
+    // Tell our application's ticker to run a new callback every frame, passing
+    // in the amount of time that has passed since the last tick
+    app.ticker.add((ticker) => {
+        // Add the time to our total elapsed time
+        elapsed += ticker.deltaTime;
+        // Update the sprite's X position based on the cosine of our elapsed time.  We divide
+        // by 50 to slow the animation down a bit...
+        sprite.x = 100.0 + Math.cos(elapsed/50.0) * 100.0;
     });
   </script>
-  <script src="https://use.fontawesome.com/e7cb172c8c.js"></script>
 </body>
 </html>

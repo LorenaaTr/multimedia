@@ -47,17 +47,17 @@
     width: 100%;
     background: #bbd2c5; 
     background: -webkit-linear-gradient(
-      to right,
-      #292e49,  
-      #98FB98,  
-      #bbd2c5
-    ); 
-    background: linear-gradient(
-      to right,
-      #292e49,  
-      #98FB98,  
-      #bbd2c5
-    ); 
+    to right,
+    #292e49,
+    #536976,
+    #bbd2c5
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #292e49,
+    #536976,
+    #bbd2c5
+  );
 }
 
   .scan {
@@ -703,7 +703,7 @@
     justify-content: center;
     align-items: center;
     width: 70%;
-    gap: 20px;
+    gap: 15px;
     position: absolute;
     top: 20%;
   }
@@ -727,13 +727,54 @@
   
   .detailsInfoHeadphones{
     width: 100%;
-    min-height: 600px;
+    min-height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
   }
+  .slider-container {
+    margin: 20px;
+  }
   
+  .reviews{
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    color: orangered;
+  }
+  /* Style the slider */
+  .slider {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling for the slider */
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  
+  /* Style each slide */
+  .slide {
+    flex: 0 0 auto; /* Prevent slides from shrinking */
+    width: 300px; /* Set the width of each slide */
+    padding: 10px;
+    background-color: #f0f0f0;
+    margin-right: 10px;
+  }
+  
+  /* Hide horizontal scrollbar */
+  .slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Style the scrollbar for Firefox */
+  .slider {
+    scrollbar-width: none;
+  }
+
+  .rev{
+    color: orangered;
+  }
+
   
   
