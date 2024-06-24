@@ -5,7 +5,7 @@ $(function () {
   $(document).ready(function () {
     setTimeout(function () {
       $(".scan-container").fadeOut();
-    }, 10000);
+    }, 4000);
     $(".explore-btn").click(function () {
       $(".landing-page").fadeOut(1500);
       $(".main-page").fadeIn(4000);
