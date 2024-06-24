@@ -1,254 +1,176 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Multimedia</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.17.2/simplelightbox.min.css"
-    />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"
-      integrity="sha512-RX/OFugt/bkgwRQg4B22KYE79dQhwaPp2IZaA/YyU3GMo/qY7GrXkiG6Dvvwnds6/DefCfwPTgCXnaC6nAgVYw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.0.2/pixi.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.17.2/simplelightbox.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js" integrity="sha512-RX/OFugt/bkgwRQg4B22KYE79dQhwaPp2IZaA/YyU3GMo/qY7GrXkiG6Dvvwnds6/DefCfwPTgCXnaC6nAgVYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://pixijs.download/release/pixi.min.js"></script>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./homestyle.css" />
-  </head>
-  <body>
-    <div class="scan-container">
-      <div class="scan">
-        <div class="loader"></div>
-        <h3>Loading</h3>
-      </div>
+</head>
+<body>
+    <div class="scan-container" id="scan-container">
+        <div class="scan">
+            <div class="loader" id="loader"></div>
+            <h3>Loading</h3>
+        </div>
     </div>
     <div class="landing-page">
-      <div class="hero">
-        <video autoplay loop muted plays-inline class="back-video">
-          <source src="./assets/videoplayback.mp4" type="video/mp4" />
-        </video>
-        <div class="content">
-          <h1>JBL Speakers</h1>
-          <br />
-          <button href="index.html" class="explore-btn">Explore</button>
+        <div class="hero">
+            <video autoplay loop muted plays-inline class="back-video">
+                <source src="./assets/videoplayback.mp4" type="video/mp4" />
+            </video>
+            <div class="content">
+                <h1>JBL Speakers</h1>
+                <br />
+                <button href="index.html" class="explore-btn">Explore</button>
+            </div>
         </div>
-      </div>
     </div>
     <div class="main-page">
-      <ul class="navbar">
-        <li class="active">
-          <a href="#section-a"><i class="fa fa-home" aria-hidden="true"></i></a>
-        </li>
-        <li>
-          <a href="#section-b"
-            ><i class="fa fa-heart-o" aria-hidden="true"></i
-          ></a>
-        </li>
-        <li>
-          <a href="#section-d"
-            ><i class="fa fa-th-list" aria-hidden="true"></i
-          ></a>
-        </li>
-        <li>
-          <a href="#section-c"
-            ><i class="fa fa-picture-o" aria-hidden="true"></i
-          ></a>
-        </li>
-      </ul>
-
-      <section id="section-a" class="section-a">
-        <div class="container">
-          <div>
-            <h1>JBL SPEAKERS.</h1>
-            <p>
-              Immerse yourself in unparalleled audio quality with JBL speakers, 
-              designed for music lovers and audiophiles alike.
-               Whether you're commuting, working out, or simply relaxing at home, 
-               JBL speakers provide an exceptional listening experience.
-            </p>
-            <a href="./productDetails.html" class="btn">Read More</a>
-          </div>
-          <img src="assets/speaker.jpg" alt="" />
-        </div>
-      </section>
-
-      <section id="section-b" class="section-b">
-        <div class="overlay">
-          <div class="section-b-inner py-5">
-            <h2 class="text-5 mt-1">Unleash Your Sound with JBL Speakers</h2>
-            <p class="mt-1">
-              Experience unparalleled audio quality with JBL speakers. 
-              Whether you're a casual listener or a dedicated audiophile,
-              our headphones deliver crystal-clear sound, powerful bass, and supreme comfort for all-day wear.
-              Perfect for music lovers, gamers, and professionals alike,
-                JBL speakers are designed to elevate your auditory experience and keep you connected to what matters most. 
-                Discover the difference with JBL – where sound meets excellence.
-            </p>
-            <div class="containeer">
-              &nbsp;&nbsp;
-              <h1>&#x1D11E;</h1>
-              <div id="audio-visual" onclick="playPause()">
-                <div class="audio-wire audio-wire-1"></div>
-                <div class="audio-wire audio-wire-2"></div>
-                <div class="audio-wire audio-wire-3"></div>
-                <div class="audio-wire audio-wire-4"></div>
-                <div class="audio-wire audio-wire-5"></div>
-                <div class="audio-wire audio-wire-6"></div>
-                <div class="audio-wire audio-wire-7"></div>
-                <div class="audio-wire audio-wire-8"></div>
-                <div class="audio-wire audio-wire-9"></div>
-              </div>
-              <p>Click me for play or pause!</p>
-            </div>
-            <audio src="assets/forever.mp3" id="music" loop></audio>
-          </div>
-        </div>
-      </section>
-      <section id="section-d" class="section-d">
-        <ul class="cards">
-          <li class="card">
-            <h1>Sounds like an epiphany.</h1>
-
-            <p>
-              JBL speakers offer high-fidelity audio combined with state-of-the-art
-              Acoustic Noise Cancellation to create an extraordinary listening experience.
-              Every component of their custom-engineered drivers is designed to produce
-              sound with minimal distortion across the audible spectrum. From powerful, 
-              clear highs, you'll experience every note with exceptional clarity.
-            </p>
-          </li>
-          <li class="card">
-            <h1>Immersive listening</h1>
-
-            <p>
-              To cancel unwanted external sound, JBL speakers employ cutting-edge noise-cancelling technology with an
-               array of outward-facing microphones that detect ambient noise, and inward-facing microphones that monitor 
-               the audio you're listening to. Beamforming microphones ensure your voice is captured clearly during phone calls.
-            </p>
-          </li>
-          <li class="card">
-            <h1>Distortionless playback</h1>
-
-            <p>
-              Modeled after those in high-end floor-standing speakers, JBL's driver features a dual-neodymium ring magnet motor that
-               minimizes total harmonic distortion across the entire audible range.
-               This engineering marvel ensures consistently clear playback, even at maximum volume levels.
-            </p>
-          </li>
-          <li class="card">
-            <h1>Hear every detail</h1>
-
-            <p>
-              The dynamic driver produces a wide frequency range that uncovers
-              the rich details of every sound — delivering your favorite songs
-              with previously unheard texture and accuracy.
-            </p>
-          </li>
+        <ul class="navbar">
+            <li class="active">
+                <a href="#section-a"><i class="fa fa-home" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#section-b"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#section-d"><i class="fa fa-th-list" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#section-c"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+            </li>
         </ul>
-      </section>
-      <section id="section-c" class="section-c">
-        <div class="gallery">
-          <a href="assets/photo1.jpg" class="big"
-            ><img src="assets/photo1.jpg" alt=""
-          /></a>
-          <a href="assets/girl.png" class="big"
-            ><img src="assets/girl.png" alt=""
-          /></a>
-          <a href="assets/speaker4.jpg" class="big"
-          ><img src="assets/speaker4.jpg" alt=""
-        /></a>
-          <a href="assets/spea1.jpg" class="big"
-            ><img src="assets/spea1.jpg" alt=""
-          /></a>
-          <a href="assets/spea2.jpg" class="big"
-            ><img src="assets/spea2.jpg" alt=""
-          /></a>
-          <a href="assets/girl2.jpg" class="big">
-            <img src="assets/girl2.jpg" alt=""
-          /></a>
-        </div>
-      </section>
 
-      <footer class="section-footer py-4 bg-primary">
-        <div class="container">
-          <div>
-            <h2 class="text-2 mb-1">JBL HEADPHONES.</h2>
-            <a href="http://twitter.com">
-              <i class="fa fa-twitter-square" aria-hidden="true"></i>
-            </a>
-            <a href="http://facebook.com">
-              <i class="fa fa-facebook-square" aria-hidden="true"></i>
-            </a>
-            <a href="http://youtube.com">
-              <i class="fa fa-youtube-play" aria-hidden="true"></i>
-            </a>
-          </div>
-          <div>
-            <h3>Company Info</h3>
-            <ul>
-              <li><a href="productDetails.html">All Products</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
+        <section id="section-a" class="section-a">
+            <div class="container">
+                <div>
+                    <h1>JBL SPEAKERS.</h1>
+                    <p>
+                        Immerse yourself in unparalleled audio quality with JBL speakers, designed for music lovers and audiophiles alike. Whether you're commuting, working out, or simply relaxing at home, JBL speakers provide an exceptional listening experience.
+                    </p>
+                    <a href="./productDetails.html" class="btn">Read More</a>
+                </div>
+                <img src="assets/speaker.jpg" alt="" />
+            </div>
+        </section>
+
+        <section id="section-b" class="section-b">
+            <div class="overlay">
+                <div class="section-b-inner py-5">
+                    <h2 class="text-5 mt-1">Unleash Your Sound with JBL Speakers</h2>
+                    <p class="mt-1">
+                        Experience unparalleled audio quality with JBL speakers. Whether you're a casual listener or a dedicated audiophile, our headphones deliver crystal-clear sound, powerful bass, and supreme comfort for all-day wear. Perfect for music lovers, gamers, and professionals alike, JBL speakers are designed to elevate your auditory experience and keep you connected to what matters most. Discover the difference with JBL – where sound meets excellence.
+                    </p>
+                    <div class="containeer">
+                        &nbsp;&nbsp;
+                        <h1>&#x1D11E;</h1>
+                        <div id="audio-visual" onclick="playPause()">
+                            <div class="audio-wire audio-wire-1"></div>
+                            <div class="audio-wire audio-wire-2"></div>
+                            <div class="audio-wire audio-wire-3"></div>
+                            <div class="audio-wire audio-wire-4"></div>
+                            <div class="audio-wire audio-wire-5"></div>
+                            <div class="audio-wire audio-wire-6"></div>
+                            <div class="audio-wire audio-wire-7"></div>
+                            <div class="audio-wire audio-wire-8"></div>
+                            <div class="audio-wire audio-wire-9"></div>
+                        </div>
+                        <p>Click me for play or pause!</p>
+                    </div>
+                    <audio src="assets/forever.mp3" id="music" loop></audio>
+                </div>
+            </div>
+        </section>
+        <section id="section-d" class="section-d" >
+            <ul class="cards">
+                <li class="card">
+                    <h1>Sounds like an epiphany.</h1>
+
+                    <p>
+                        JBL speakers offer high-fidelity audio combined with state-of-the-art Acoustic Noise Cancellation to create an extraordinary listening experience. Every component of their custom-engineered drivers is designed to produce sound with minimal distortion across the audible spectrum. From powerful, clear highs, you'll experience every note with exceptional clarity.
+                    </p>
+                </li>
+                <li class="card">
+                    <h1>Immersive listening</h1>
+
+                    <p>
+                        To cancel unwanted external sound, JBL speakers employ cutting-edge noise-cancelling technology with an array of outward-facing microphones that detect ambient noise, and inward-facing microphones that monitor the audio you're listening to. Beamforming microphones ensure your voice is captured clearly during phone calls.
+                    </p>
+                </li>
+                <li class="card">
+                    <h1>Distortionless playback</h1>
+
+                    <p>
+                        Modeled after those in high-end floor-standing speakers, JBL's driver features a dual-neodymium ring magnet motor that minimizes total harmonic distortion across the entire audible range. This engineering marvel ensures consistently clear playback, even at maximum volume levels.
+                    </p>
+                </li>
+                <li class="card">
+                    <h1>Hear every detail</h1>
+
+                    <p>
+                        The dynamic driver produces a wide frequency range that uncovers the rich details of every sound — delivering your favorite songs with previously unheard texture and accuracy.
+                    </p>
+                </li>
             </ul>
-          </div>
-          <div>
-            <h3>Blog Posts</h3>
-            <ul>
-              <li><a href="#">Lorem ipsum dolor.</a></li>
-              <li><a href="#">Lorem ipsum dolor.</a></li>
-              <li><a href="#">Lorem ipsum dolor.</a></li>
-              <li><a href="#">Lorem ipsum dolor.</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>SUBSCRIBE</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <form
-              class="mt-1"
-              name="email-form"
-              method="POST"
-              data-netlify="true"
-            >
-              <div class="email-form">
-                <span class="form-control-wrap"
-                  ><input
-                    type="email"
-                    name="email"
-                    id="email"
-                    size="40"
-                    class="form-control"
-                    placeholder="E-mail" /></span
-                ><button
-                  type="submit"
-                  value="Submit"
-                  class="form-control submit"
-                >
-                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </footer>
+        </section>
+        <section id="section-c" class="section-c">
+            <div class="gallery">
+                <a href="assets/photo1.jpg" class="big"><img src="assets/photo1.jpg" alt="" /></a>
+                <a href="assets/girl.png" class="big"><img src="assets/girl.png" alt="" /></a>
+                <a href="assets/speaker4.jpg" class="big"><img src="assets/speaker4.jpg" alt="" /></a>
+                <a href="assets/spea1.jpg" class="big"><img src="assets/spea1.jpg" alt="" /></a>
+                <a href="assets/spea2.jpg" class="big"><img src="assets/spea2.jpg" alt="" /></a>
+                <a href="assets/girl2.jpg" class="big"><img src="assets/girl2.jpg" alt="" /></a>
+            </div>
+        </section>
+
+        <footer class="section-footer py-4 bg-primary">
+            <div class="container">
+                <div>
+                    <h2 class="text-2 mb-1">JBL HEADPHONES.</h2>
+                    <a href="http://twitter.com"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                    <a href="http://facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="http://youtube.com"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                </div>
+                <div>
+                    <h3>Company Info</h3>
+                    <ul>
+                        <li><a href="productDetails.html">All Products</a></li>
+                        <li><a href="index.html">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Blog Posts</h3>
+                    <ul>
+                        <li><a href="history.html">History of JBL.</a></li>
+                        <li><a href="contactUs.html">Contact Us.</a></li>
+                        <li><a href="thankyou.html">Thank YOU.</a></li>
+                        <li><a href="#">Lorem ipsum dolor.</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>SUBSCRIBE</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <form class="mt-1" name="email-form" method="POST" data-netlify="true">
+                        <div class="email-form">
+                            <span class="form-control-wrap"><input type="email" name="email" id="email" size="40" class="form-control" placeholder="E-mail" /></span><button type="submit" value="Submit" class="form-control submit"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/1.17.2/simple-lightbox.min.js"></script>
     <script src="https://use.fontawesome.com/e7cb172c8c.js"></script>
     <script src="./script.js"></script>
-    <!-- <script type="text/javascript" src="vanilla-tilt.js"></script> -->
-    <!-- <script>
-      VanillaTilt.init(document.querySelectorAll(".card"), {
-        max: 25,
-        speed: 400,
-        glare: true,
-        "max-glare": 1,
-      });
-    </script> -->
-  </body>
+
+</body>
 </html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - Support</title>
+  <script src="https://pixijs.download/release/pixi.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="blog.css">
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+      margin-left: 430px; /* Adjust the left margin as needed */
+      margin-bottom: 140px;
+    }
+ 
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="history">Thank You for Your Support - JBL Team!</h1>
+    </div>
+  </header>
+
+  <a href="./index.html" class="btn">Go Back</a>
+
+  <main class="container">
+    <section id="thankyou" class="thankyou">
+      <div class="thankyou-message">
+        <p>We are incredibly grateful for your support. Your contribution helps us continue creating and delivering valuable content to our audience. Thank you for being a part of our community!</p>
+      </div>
+    </section>
+  </main>
+
+  
+
+  <script type="module">
+    import { Application, Graphics } from 'https://cdn.skypack.dev/pixi.js';
+
+    // Create a new application
+    const app = new Application();
+
+    // Initialize the application
+    async function initialize() {
+      await app.init({ antialias: true, width: 640, height: 360, backgroundColor: 0xCCCCCC });
+      document.body.appendChild(app.view);
+
+      const graphics = new Graphics();
+
+      // Draw heart shape
+      graphics.beginFill(0xff0000);
+      graphics.moveTo(75, 40);
+      graphics.bezierCurveTo(75, 37, 70, 25, 50, 25);
+      graphics.bezierCurveTo(20, 25, 20, 62.5, 20, 62.5);
+      graphics.bezierCurveTo(20, 80, 40, 102, 75, 120);
+
+      // Draw right side of heart
+      graphics.bezierCurveTo(110, 102, 130, 80, 130, 62.5);
+      graphics.bezierCurveTo(130, 62.5, 130, 25, 100, 25);
+      graphics.bezierCurveTo(85, 25, 75, 37, 75, 40);
+
+      graphics.endFill();
+
+      // Center heart on screen
+      graphics.x = (app.screen.width - 130) / 2; // 130 is the approximate width of the heart shape
+      graphics.y = (app.screen.height - 120) / 2; // 120 is the approximate height of the heart shape
+
+      app.stage.addChild(graphics);
+    }
+
+    initialize();
+  </script>
+</body>
+</html>

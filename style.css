@@ -45,19 +45,7 @@
     z-index: 1;
     height: 100%;
     width: 100%;
-    background: #bbd2c5; 
-    background: -webkit-linear-gradient(
-    to right,
-    #292e49,
-    #536976,
-    #bbd2c5
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #292e49,
-    #536976,
-    #bbd2c5
-  );
+    background: black;
 }
 
   .scan {
@@ -81,8 +69,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 85%;
+    height: 85%;
     background: url(assets/blackLogo.jpg);
     background-size: 300px;
     animation: animate 4s ease-in-out infinite;
@@ -782,4 +770,51 @@
       center/cover;
     height: 70vh;
   }
-  
+
+     /* product cards */
+     .product-cards {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .product-card {
+      background: #f8f8f8;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 30%;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0;
+    }
+
+    .product-card p {
+      color: #555;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+    .section-f{
+      margin-top: 60px;
+      margin-bottom: 70px;
+    }
+  .productsTitle{
+    text-align: center;
+    color: purple;
+    margin-bottom: 30px;
+  }
+  .buttonDet{
+    margin-top: 15px;
+  }
